@@ -4,9 +4,6 @@ version = "0.1.0"
 description = "基于LangChain和LCEL构建的浏览器自动化AI助手"
 readme = "README.md"
 requires-python = ">=3.14"
-authors = [
-    {name = "陈七", email = "your.email@example.com"}
-]
 license = {text = "MIT"}
 keywords = ["langchain", "browser-automation", "ai-agent", "playwright"]
 classifiers = [
