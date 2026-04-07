@@ -1,0 +1,74 @@
+[project]
+name = "lengchain"
+version = "0.1.0"
+description = "基于LangChain和LCEL构建的浏览器自动化AI助手"
+readme = "README.md"
+requires-python = ">=3.14"
+authors = [
+    {name = "陈七", email = "your.email@example.com"}
+]
+license = {text = "MIT"}
+keywords = ["langchain", "browser-automation", "ai-agent", "playwright"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.14",
+]
+
+dependencies = [
+    "langchain>=1.2.14",
+    "langchain-core>=1.2.23",
+    "langchain-openai>=1.1.12",
+    "playwright>=1.40.0",
+    "beautifulsoup4>=4.12.0",
+    "lxml>=4.9.0",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "mypy>=1.5.0",
+    "ruff>=0.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/lengchain"
+Documentation = "https://github.com/yourusername/lengchain#readme"
+Repository = "https://github.com/yourusername/lengchain"
+Issues = "https://github.com/yourusername/lengchain/issues"
+
+[project.scripts]
+lengchain-server = "lengchain.api.server:run_server"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.black]
+line-length = 100
+target-version = ['py314']
+
+[tool.mypy]
+python_version = "3.14"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+asyncio_mode = "auto"
